@@ -10,7 +10,6 @@ if __name__ == "__main__":
 		d.gameDisplay = gameType
 
 	def setup():
-		print("Setup")
 		d.snake = Snake(2, 3)
 		d.gameDisplay = "menu"
 
@@ -21,7 +20,7 @@ if __name__ == "__main__":
 			],
 			[
 				" ____  _  _  ____  ____ \n( ___)( \/ )(_  _)(_  _)\n )__)  )  (  _)(_   )(  \n(____)(_/\_)(____) (__) ",
-				lambda: d.stop(),
+				lambda: d.exit(),
 			],
 		]
 
@@ -79,12 +78,13 @@ if __name__ == "__main__":
 
 		d.background("black")
 
-		d.drawBuffer()
 		time.sleep(0.1)
 
 	def keyPressed(key):
 		if d.gameDisplay == "menu":
-			if key == "z":
+			if key == "c":
+				d.exit()
+			elif key == "z":
 				d.gameSelection = 0
 			elif key == "s":
 				d.gameSelection = 1
